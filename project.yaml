@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: jgeoidrg
+
+spec:
+  selector:
+    matchLabels:
+    label-name-1: label-value
+  replicas: 3
+  template:
+    metadata:
+      name: my-first-pod
+      labels:
+        label-name-1: label-value
+    spec:
+      containers:
+        - image: nginx:alpine
+          name: nginx-container
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "1"    
+            requests: 
+              memory: "100Mi" 
